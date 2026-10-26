@@ -136,6 +136,10 @@ Menu names vary between makes and Android versions. If a setting isn't where thi
 
 1. Make it the Home app. With the tablet still plugged in: `adb shell cmd package set-home-activity com.seven7genanalytics.dancingwithdementia/.MainActivity`, or Settings, Apps, Default apps, Home app, **Music Player** (the app's name on the tablet in current builds). From Build 44 the app also fixes this itself as Device Owner, so it can't be changed by mistake.
 2. Long-press the faint gear icon (top right, about 1.5 seconds) to open the Tablet Menu, then **Family Setup**.
+
+   ![The main screen with the faint setup cog in the top right corner ringed: press and hold it for about one and a half seconds.](images/main-landscape.png)
+
+   ![The Tablet Menu. Tablet Settings leaves the app for Android's normal home screen and settings. Restart App is the first thing to try when something isn't working and never needs the PIN. Family Setup sets up the music. Fix Spotify restarts Spotify when it is stuck.](images/tablet-menu.png)
 3. Check that an **Exit Kiosk Mode** button is shown. That means Device Owner is working.
 
 Then do steps 9 and 10 in order. **The PIN is always the very last thing you set.** Set it earlier and you'll be typing it every time you go back into Family Setup during setup.
@@ -150,6 +154,11 @@ About 15 minutes.
 - The **playlist link(s)** and, if used, the **book link** for this person.
 
 ### Steps
+
+The numbers on these pictures match step 5 of [GETTING-STARTED.md](GETTING-STARTED.md#5-family-setup-connect-spotify-and-add-the-music); the steps below follow the same order, with the kiosk steps added. On a locked-down tablet the bottom of Family Setup shows **Exit Kiosk Mode** instead of the grey note in the pictures.
+
+![Family Setup, Spotify part: the Client ID box, Get Login Link, and the box for pasting the Example Domain address, then Submit Code.](images/family-setup-2-spotify-login.png)
+
 1. **Family Setup, Exit Kiosk Mode.** This lets you switch between the Spotify app, the browser and this app while setting up.
 2. If the tablet has anyone else's playlists, book or login on it (for example from a previous owner or a test), tap **Clear Spotify details** twice. The login, device, playlists and book are removed. The Client ID, name and PIN stay.
 3. **Open the Spotify app** and check it is signed in with this tablet's account (Spotify, Settings shows the account). Play any song for a few seconds, then stop it. This registers the tablet with Spotify.
@@ -161,9 +170,13 @@ About 15 minutes.
    - It should now say **Connected to Spotify.**
    - If the browser didn't open: long-press the blue link shown in Family Setup, copy it, and paste it into Chrome yourself.
 6. Under **Which Device Plays the Music?**, tap **Refresh Devices List** and choose **this tablet** (the device name you set, e.g. DwD-01). If it isn't listed, play a song in the Spotify app again, then refresh.
+![Family Setup, device and playlist part: Refresh Devices List with this tablet ticked in green, then the playlist link and its short button name.](images/family-setup-3-device-playlist.png)
+
 7. **Playlist:** in the Spotify app, open the playlist, tap the three dots, **Share, Copy link**. Paste it into **Playlist link** and type a short button name (e.g. Favourites).
    - For more than one playlist, tick **More playlists** and fill in the second and third slots the same way.
 8. **Audiobook (optional):** copy the book's link the same way, paste it into **Audiobook link**, and give it a name. Leave both boxes empty if there's no book; the Book button then doesn't appear.
+![Family Setup, audiobook part: the audiobook link and name, Save Playlists, and Clear Spotify details.](images/family-setup-4-book-save.png)
+
 9. Tap **Save Playlists**. It should say how many items were saved, or explain what's wrong with a link.
 
 ### If something goes wrong
@@ -173,6 +186,8 @@ About 15 minutes.
 - **"Spotify isn't connected yet." months later:** Spotify asks for a fresh login about every six months. Repeat step 5.
 
 ## 10. Finish: name, test, then PIN last
+
+![Family Setup, top of the page: the person's name and Save Name, and Set PIN, which is done last of all.](images/family-setup-1-name-pin.png)
 
 1. Type the person's name and tap **Save Name**. It shows at the top of the main screen.
 2. Tap **Re-enter Kiosk Mode**, close Family Setup, and test every button on the main screen: Music (and each choice, if several), Book, Play, Stop, Back, Next, Louder, Quieter.
@@ -184,4 +199,4 @@ About 15 minutes.
 - **Getting to Android's own settings:** Tablet Menu, **Tablet Settings** (needs the PIN). This unlocks the kiosk and opens the tablet's normal home screen. From Build 44 the lock comes back on its own when the app is returned to. On older builds, use **Restart App** in the Tablet Menu, or restart the tablet.
 - **Updates:** a new build signed with the same release key installs over the top (`adb install -r`, or from the releases page). Device Owner and Family Setup are kept.
 - **Undoing Device Owner:** the only way is a factory reset. That is deliberate. It stops anyone switching the kiosk off by accident.
-- **What the on-screen messages mean:** see the table in [GETTING-STARTED.md](GETTING-STARTED.md#what-the-messages-mean).
+- **What the on-screen messages mean:** see the table in [CARERS-GUIDE.md](CARERS-GUIDE.md#what-the-words-at-the-top-mean).

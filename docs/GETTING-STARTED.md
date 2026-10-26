@@ -129,23 +129,14 @@ That's it. The tablet is ready.
 
 ![The main screen while music plays: the middle circle shows the song and the singer.](images/playing-landscape.png)
 
-- **Play** carries on from where the music stopped. **Stop** pauses it in place. In practice, most people only ever use these two.
-- **Restart App** in the Tablet Menu never needs the PIN. It is the guaranteed way back if anything looks wrong.
+Print [CARERS-GUIDE.md](CARERS-GUIDE.md) and leave it with the tablet. It explains the buttons, what the words at the top of the screen mean, and what to try when something goes wrong, for anyone who spends time with the person. It has a space for your contact details and who holds the PIN.
+
+The short version:
+
+- **Play** carries on from where the music stopped. **Stop** pauses it in place. Most people only ever use these two.
+- **Restart App** in the Tablet Menu never needs the PIN. It is the first thing to try if anything looks wrong.
 - **After a power cut or restart**, the app comes back by itself. Spotify takes a minute or so to wake up.
-
-### What the messages mean
-
-These are the words the app shows under the name at the top of the screen.
-
-| Message | What it means | What to do |
-| --- | --- | --- |
-| *Warming up…* | The tablet has just been switched on and Spotify is starting. | Wait about 90 seconds. It changes to *Ready* by itself. |
-| *Starting Spotify… try the button again in a few seconds.* | Spotify wasn't running, so the app has woken it. Spotify's screen may flash up briefly. | Wait five seconds, then tap Music or Book again. |
-| *Couldn't find the tablet's Spotify device - pick it again in Family Setup.* | Spotify has forgotten which device should play. | Open the Spotify app once, then Family Setup, **Refresh Devices List**, and choose the tablet. |
-| *Couldn't reach Spotify - check the tablet is online.* | No internet connection. | Check Wi-Fi is on and connected, then tap Play again. |
-| *Spotify isn't connected yet.* | The Spotify login has expired (about every six months) or was never done. | Repeat steps 2 to 4 of Family Setup above. |
-| Spotify is stuck, or the buttons still do nothing after Restart App | Spotify itself has got stuck. It is not a fault in this app. | Tablet Menu, **Fix Spotify**, then **Force stop** and **OK**. Press Home to come back, then press Music. Spotify starts again by itself. |
-| Stuck on Android's normal home screen | Something took the tablet out of the app. | Press Home. If Android asks, choose Music Player and Always. Or restart the tablet. |
+- **About every six months**, Spotify asks for a fresh login and the screen says *Spotify isn't connected yet.* Repeat items 2 to 4 of step 5 above.
 
 ### Updating
 

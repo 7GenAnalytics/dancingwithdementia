@@ -27,6 +27,7 @@ Contact: dancing@7genanalytics.com
 | `res/` | Layouts, button styles, strings |
 | `res/values/config_defaults.xml` | Pre-filled Family Setup values, **committed empty** |
 | `docs/GETTING-STARTED.md` | Start here: simple setup for families, Spotify developer app, what the messages mean |
+| `docs/CARERS-GUIDE.md` | Day-to-day guide for family, carers and staff: the buttons, the messages, what to try when something goes wrong. Made to print |
 | `docs/TABLET-SETUP.md` | Locked-down (kiosk) setup with Device Owner, for care homes |
 | `docs/BUILD.md` | How the app is built and signed |
 
