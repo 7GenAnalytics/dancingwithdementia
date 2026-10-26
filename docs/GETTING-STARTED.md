@@ -87,7 +87,7 @@ The full checklist, with the reason for each setting, is in step 7 of [TABLET-SE
 
 To open Family Setup, **press and hold the faint gear icon** in the top right corner for about a second and a half. The Tablet Menu opens; tap **Family Setup**.
 
-![The Tablet Menu: Tablet Settings, Restart App, Family Setup, Fix Spotify and Close. Restart App is marked as the first thing to try when something isn't working, with no PIN needed. Fix Spotify is marked for restarting Spotify when it is stuck: tap Force stop, then OK.](images/tablet-menu.png)
+![The Tablet Menu. Tablet Settings leaves the app for Android's normal home screen and settings (PIN needed, if one is set). Restart App is the first thing to try when something isn't working (no PIN needed). Family Setup sets up the music: Spotify, playlists, book, name and PIN (PIN needed, if one is set). Fix Spotify restarts Spotify when it is stuck: tap Force stop, then OK.](images/tablet-menu.png)
 
 1. **Spotify Playlist section.** Paste your Client ID from step 1 into **Spotify Client ID** and tap **Save Client ID**. It says *Client ID saved.*
 2. Tap **Get Login Link**. The tablet tries to open Spotify's login page.
