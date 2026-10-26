@@ -50,7 +50,7 @@ Try these in order. Most problems are fixed by step 1 or 2.
 2. **Restart App.** Press and hold the cog, then tap **Restart App**. No PIN needed.
 3. **Fix Spotify.** Press and hold the cog, tap **Fix Spotify**, then **Force stop** and **OK**. Press the tablet's Home button to come back, then press Music. Spotify starts again by itself.
 4. **Restart the tablet.** Hold the power button and choose **Restart**. The app comes back by itself.
-5. **Still not right?** Contact the family, using the details at the bottom of this page.
+5. **Still not right?** Contact the family, using the details at the bottom of this page. From Build 45, it helps to tell them the build number, shown in small grey letters at the bottom of the Tablet Menu.
 
 ### What the words at the top mean
 

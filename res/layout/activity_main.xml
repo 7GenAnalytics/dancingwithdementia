@@ -1067,6 +1067,19 @@
                     android:textColor="#FFFFFF"
                     android:textStyle="bold" />
 
+            <!-- Build 45: which build this tablet is running, read from
+                 versionName in AndroidManifest.xml by showBuildNumber().
+                 Small and grey on purpose: it is for the family or whoever
+                 is helping on the phone ("which build is it?"), not for the
+                 person using the tablet. -->
+            <TextView
+                android:id="@+id/setupBuildText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColor="#666B75"
+                android:textSize="14sp" />
+
             </LinearLayout>
         </ScrollView>
     </FrameLayout>
@@ -1193,6 +1206,19 @@
                 android:text="Close"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
+
+            <!-- Build 45: which build this tablet is running, read from
+                 versionName in AndroidManifest.xml by showBuildNumber().
+                 Small and grey on purpose: it is for the family or whoever
+                 is helping on the phone ("which build is it?"), not for the
+                 person using the tablet. -->
+            <TextView
+                android:id="@+id/quickMenuBuildText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:textColor="#666B75"
+                android:textSize="14sp" />
 
         </LinearLayout>
         </ScrollView>

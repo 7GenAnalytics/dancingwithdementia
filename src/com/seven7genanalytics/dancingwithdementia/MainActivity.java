@@ -287,6 +287,8 @@ public class MainActivity extends Activity {
     // inside setupPanel - see bindViews().
     private FrameLayout quickMenuPanel;
     private Button quickFamilySetupButton, quickCloseButton;
+    // Build 45: "Build NN" at the foot of the Tablet Menu and Family Setup.
+    private TextView quickMenuBuildText, setupBuildText;
     // Fix Spotify (Round 37) - see openSpotifyAppInfoScreen()'s note.
     private Button quickFixSpotifyButton;
 
@@ -471,6 +473,7 @@ public class MainActivity extends Activity {
         instance = this;
         setContentView(R.layout.activity_main);
         bindViews();
+        showBuildNumber();
         seedDefaultConfigIfFirstRun();
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         setupKiosk();
@@ -753,6 +756,8 @@ public class MainActivity extends Activity {
         quickFamilySetupButton = (Button) findViewById(R.id.quickFamilySetupButton);
         quickFixSpotifyButton = (Button) findViewById(R.id.quickFixSpotifyButton);
         quickCloseButton = (Button) findViewById(R.id.quickCloseButton);
+        quickMenuBuildText = (TextView) findViewById(R.id.quickMenuBuildText);
+        setupBuildText = (TextView) findViewById(R.id.setupBuildText);
 
         secondaryControls = (LinearLayout) findViewById(R.id.secondaryControls);
         volumeDownButton = (Button) findViewById(R.id.volumeDownButton);
@@ -1356,6 +1361,30 @@ public class MainActivity extends Activity {
         label.setSpan(new android.text.style.RelativeSizeSpan(1.9f), 0, icon.length(),
                 android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return label;
+    }
+
+    // ---------- Build number (Build 45) ----------
+
+    /**
+     * Shows which build this tablet is running, as "Build 45", at the foot
+     * of the Tablet Menu and of Family Setup. Whoever is helping by phone
+     * can then ask "which build is it?" and compare it with the releases
+     * page. The number is read from android:versionName in
+     * AndroidManifest.xml, so it is always the build actually installed and
+     * never needs updating by hand. The Tablet Menu copy needs no PIN, so a
+     * carer can read it out without being able to change anything.
+     */
+    private void showBuildNumber() {
+        String label;
+        try {
+            label = "Build " + getPackageManager()
+                    .getPackageInfo(getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            // Cannot happen for our own package, but never crash over a label.
+            label = "";
+        }
+        if (quickMenuBuildText != null) quickMenuBuildText.setText(label);
+        if (setupBuildText != null) setupBuildText.setText(label);
     }
 
     // ---------- Family/staff PIN (roadmap item 4) ----------
