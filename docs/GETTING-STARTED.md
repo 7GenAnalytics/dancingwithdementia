@@ -87,7 +87,7 @@ The full checklist, with the reason for each setting, is in step 7 of [TABLET-SE
 
 To open Family Setup, **press and hold the faint gear icon** in the top right corner for about a second and a half. The Tablet Menu opens; tap **Family Setup**.
 
-![The Tablet Menu: Tablet Settings, Restart App, Family Setup, Fix Spotify and Close. Restart App is marked as the first thing to try when something isn't working, with no PIN needed. Fix Spotify is marked for when Spotify itself is stuck or blank.](images/tablet-menu.png)
+![The Tablet Menu: Tablet Settings, Restart App, Family Setup, Fix Spotify and Close. Restart App is marked as the first thing to try when something isn't working, with no PIN needed. Fix Spotify is marked for restarting Spotify when it is stuck: tap Force stop, then OK.](images/tablet-menu.png)
 
 1. **Spotify Playlist section.** Paste your Client ID from step 1 into **Spotify Client ID** and tap **Save Client ID**. It says *Client ID saved.*
 2. Tap **Get Login Link**. The tablet tries to open Spotify's login page.
@@ -129,7 +129,7 @@ These are the words the app shows under the name at the top of the screen.
 | *Couldn't find the tablet's Spotify device - pick it again in Family Setup.* | Spotify has forgotten which device should play. | Open the Spotify app once, then Family Setup, **Refresh Devices List**, and choose the tablet. |
 | *Couldn't reach Spotify - check the tablet is online.* | No internet connection. | Check Wi-Fi is on and connected, then tap Play again. |
 | *Spotify isn't connected yet.* | The Spotify login has expired (about every six months) or was never done. | Repeat steps 2 to 4 of Family Setup above. |
-| Spotify's own screen is blank or stuck | Spotify's data is muddled. It is not a fault in this app. | Tablet Menu, **Fix Spotify**, Storage, **Clear storage**. Then log in to Spotify again. |
+| Spotify is stuck, or the buttons still do nothing after Restart App | Spotify itself has got stuck. It is not a fault in this app. | Tablet Menu, **Fix Spotify**, then **Force stop** and **OK**. Press Home to come back, then press Music. Spotify starts again by itself. |
 | Stuck on Android's normal home screen | Something took the tablet out of the app. | Press Home. If Android asks, choose Music Player and Always. Or restart the tablet. |
 
 ### Updating
