@@ -1,8 +1,8 @@
 # Dancing with Dementia
 
-A simple app for those who struggle to access music or a book.
+A simple app for those who struggle to access music or a book: a large-button Android music and audiobook player for older people and people living with dementia. One screen, big buttons, with everything else tucked behind a PIN-protected Family Setup. Free and open source.
 
-A simple, large-button Android music and audiobook player for older people and people living with dementia. One screen, three big buttons (Play, Now Playing, Stop), with everything else tucked behind a PIN-protected Family Setup.
+**[Download the app](https://github.com/7GenAnalytics/DancingwithDementia-releases/releases)** · **[Getting started](docs/GETTING-STARTED.md)** · **[Day-to-day guide for carers](docs/CARERS-GUIDE.md)**
 
 ![The Dancing with Dementia main screen](docs/images/main-landscape.png)
 
