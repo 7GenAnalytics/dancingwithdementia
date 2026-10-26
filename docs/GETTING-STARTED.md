@@ -87,7 +87,7 @@ The full checklist, with the reason for each setting, is in step 7 of [TABLET-SE
 
 To open Family Setup, **press and hold the faint gear icon** in the top right corner for about a second and a half. The Tablet Menu opens; tap **Family Setup**.
 
-![The Tablet Menu: Tablet Settings, Restart App, Family Setup, Fix Spotify and Close.](images/tablet-menu.png)
+![The Tablet Menu: Tablet Settings, Restart App, Family Setup, Fix Spotify and Close. Restart App is marked as the first thing to try when something isn't working, with no PIN needed. Fix Spotify is marked for when Spotify itself is stuck or blank.](images/tablet-menu.png)
 
 1. **Spotify Playlist section.** Paste your Client ID from step 1 into **Spotify Client ID** and tap **Save Client ID**. It says *Client ID saved.*
 2. Tap **Get Login Link**. The tablet tries to open Spotify's login page.
@@ -97,8 +97,6 @@ To open Family Setup, **press and hold the faint gear icon** in the top right co
 5. **Which Device Plays the Music?** Tap **Refresh Devices List** and choose this tablet. If it isn't listed, play a song in the Spotify app again, then refresh. Choosing the tablet here stops the music playing on someone's phone by mistake.
 6. **Playlist.** In the Spotify app, open the playlist, tap the three dots, then **Share**, **Copy link**. Paste it into **Playlist link** and give the button a short name, such as *Hymns* or *Dancing*.
    - For up to three playlists, tick **More playlists** and fill in the other two the same way. The Music button will then offer a choice.
-
-     ![The choice screen shown when Music is tapped: three large buttons named Dancing, Hymns and Relaxing, and Back.](images/music-choice.png)
 7. **Audiobook (optional).** Copy the book's link the same way, paste it into **Audiobook link** and give it a name. Leave it empty and the Book button doesn't appear.
 8. Tap **Save Playlists**.
 9. **Name.** Type the person's name and tap **Save Name**. The main screen then reads, for example, *Pat's Music*.
