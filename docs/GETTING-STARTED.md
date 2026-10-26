@@ -1,6 +1,6 @@
 # Getting started
 
-This guide is for a family member, friend or volunteer setting up Dancing with Dementia for someone they care about. You don't need to be technical. Allow about an hour the first time.
+This guide is for a family member, friend or volunteer setting up Dancing with Dementia (Build 43) for someone they care about. You don't need to be technical. Allow about an hour the first time.
 
 Dancing with Dementia turns an Android tablet into a very simple music and audiobook player: a few large buttons, nothing to get lost in, and no need for the person to find their way around Spotify or a phone. You set it up once with their music, and from then on it just plays.
 
@@ -15,7 +15,7 @@ It is free, open source software (Apache 2.0 licence). It is not a medical produ
 - **An Android tablet.** Android 9 or newer. This is a good use for an old tablet sitting in a drawer: the app is built to be light, and it is tested and running day to day on an Android 9 tablet (a Neocore N1+). A stand and a charger it can live on are a big help.
 - **A Wi-Fi connection** where the tablet will live, and the Wi-Fi name and password. Spotify streams the music over the internet, so without Wi-Fi the buttons can't play anything.
 - **A Spotify Premium account for this tablet.** Premium is needed for one app to control another's playback. Use one account per tablet: a Spotify account can only play on one device at a time.
-- **The person's music:** a Spotify playlist (up to three), and optionally one audiobook. If you need help choosing songs, [Playlist for Life](https://www.playlistforlife.org.uk/) has free guidance on building a personal playlist.
+- **The person's music:** one Spotify playlist, and optionally one audiobook. If you need help choosing songs, [Playlist for Life](https://www.playlistforlife.org.uk/) has free guidance on building a personal playlist.
 - **A computer** for one step (creating your Spotify developer app, step 1). A phone works too, but a bigger screen is easier.
 
 ## Choose how locked down the tablet should be
@@ -53,7 +53,7 @@ Things to know about Spotify's rules (as of 2026; Spotify does change them):
 ## 2. Install the app on the tablet
 
 1. On the tablet, open **Chrome** and go to **github.com/7GenAnalytics/DancingwithDementia-releases/releases**.
-2. Under the newest build, open **Assets** and tap the file named `DancingwithDementia-` followed by the build number and `.apk`.
+2. Under **Build 43**, open **Assets** and tap the file named `DancingwithDementia-43.apk`.
 3. Android warns about installing apps from outside the Play Store. This is expected. Tap **Settings**, switch on **Allow from this source**, then go back.
 4. Tap **Install**. If Play Protect says it doesn't recognise the app, choose **More details**, then **Install anyway**.
 5. Afterwards, switch that permission back off: Settings, Apps, Chrome, Install unknown apps.
@@ -103,9 +103,8 @@ Family Setup is one long page: scroll down through it. The numbers on the pictur
 
 5. **Which Device Plays the Music?** Tap **Refresh Devices List** and choose this tablet; it turns green with a tick. If it isn't listed, play a song in the Spotify app again, then refresh. Choosing the tablet here stops the music playing on someone's phone by mistake.
 6. **Playlist.** In the Spotify app, open the playlist, tap the three dots, then **Share**, **Copy link**. Paste it into **Playlist link** and give the button a short name, such as *Favourites* or *Dancing*.
-   - For up to three playlists, tick **More playlists** and fill in the other two the same way. The Music button will then offer a choice.
 
-![Family Setup, audiobook part: the audiobook link and name (5.7), Save Playlists (5.8), and Clear Spotify details, which is only for wiping someone else's Spotify login and playlists.](images/family-setup-4-book-save.png)
+![Family Setup, audiobook part: the audiobook link and name (5.7), and Save Playlists (5.8).](images/family-setup-4-book-save.png)
 
 7. **Audiobook (optional).** Copy the book's link the same way, paste it into **Audiobook link** and give it a name. Leave it empty and the Book button doesn't appear.
 8. Tap **Save Playlists**. It says how many items were saved, or explains what is wrong with a link.
@@ -114,11 +113,11 @@ Family Setup is one long page: scroll down through it. The numbers on the pictur
 
 9. **Name.** Scroll back to the top, type the person's name and tap **Save Name**. The main screen then reads, for example, *Pat's Music*.
 
-You can skip **Music Folder**: it is only for music files saved on the tablet instead of Spotify. Leave **Clear Spotify details** alone unless the tablet has someone else's Spotify login or playlists on it.
+You can skip **Music Folder**: it is only for music files saved on the tablet instead of Spotify. If the tablet was used before and has someone else's Spotify details, paste your own Client ID over theirs, log in again with this tablet's account, and paste your playlist links over the old ones.
 
 ## 6. Test, then set the PIN last
 
-1. Close Family Setup and try every button: **Music** (and each choice, if there are several), **Book**, **Play**, **Stop**, **Back**, **Next**, **Louder**, **Quieter**.
+1. Close Family Setup and try every button: **Music**, **Book**, **Play**, **Stop**, **Back**, **Next**, **Louder**, **Quieter**.
 2. **Last of all**, open Family Setup again and tap **Set PIN**. Enter a 4-digit PIN twice. Without a PIN, anyone who finds the gear can change the setup. Write it down somewhere safe and share it only with people who need it.
 
 The PIN is a gentle lock to stop accidental changes, not strong security: it is stored on the tablet as plain text.

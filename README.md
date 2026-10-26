@@ -12,7 +12,7 @@ Contact: dancing@7genanalytics.com
 
 ## What it does
 
-- Plays a Spotify playlist and a Spotify audiobook (or a folder of music files on the tablet). An optional "More playlists" tick box in Family Setup lets the Music button offer up to three named playlists
+- Plays one Spotify playlist and one Spotify audiobook (or a folder of music files on the tablet)
 - Runs on Android 9 and newer, so it gives old tablets a new job. It is tested and in daily use on an Android 9 tablet
 - Big, high-contrast buttons sized to the screen
 - Runs as the tablet's home screen, so it comes back on its own after a restart or power cut
@@ -36,5 +36,8 @@ Contact: dancing@7genanalytics.com
 Deployment-specific values (Spotify Client ID, default playlist and book) never go in this repository. Put them in `local/res/values/config_defaults.xml`, which is git-ignored; the build overlays it on the empty committed file. Without it, the app simply starts unconfigured and Family Setup is used instead.
 
 ## Releases
+
+**The released, tested build is Build 43**, and the guides in `docs/` describe it. The source code in this repository has moved on (Build 45, not yet released or tested on a tablet): it adds up to three playlists, a Clear Spotify details button, kiosk improvements and the build number on screen. It will be released, and the guides updated, once it has been tested.
+
 
 Finished, signed APKs are published at [DancingwithDementia-releases](https://github.com/7GenAnalytics/DancingwithDementia-releases). Signing keys are never stored in either repository.
