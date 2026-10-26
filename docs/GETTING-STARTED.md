@@ -8,7 +8,7 @@ It is free, open source software (Apache 2.0 licence). It is not a medical produ
 
 ## What you need
 
-- **An Android tablet.** Android 9 or newer. An old family tablet is fine; a stand and a charger it can live on are a big help.
+- **An Android tablet.** Android 9 or newer. This is a good use for an old tablet sitting in a drawer: the app is built to be light, and it is tested and running day to day on an Android 9 tablet (a Neocore N1+). A stand and a charger it can live on are a big help.
 - **A Spotify Premium account for this tablet.** Premium is needed for one app to control another's playback. Use one account per tablet: a Spotify account can only play on one device at a time.
 - **The person's music:** a Spotify playlist (up to three), and optionally one audiobook. If you need help choosing songs, [Playlist for Life](https://www.playlistforlife.org.uk/) has free guidance on building a personal playlist.
 - **A computer** for one step (creating your Spotify developer app, step 1). A phone works too, but a bigger screen is easier.

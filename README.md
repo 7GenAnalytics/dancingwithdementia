@@ -11,6 +11,7 @@ Contact: dancing@7genanalytics.com
 ## What it does
 
 - Plays a Spotify playlist and a Spotify audiobook (or a folder of music files on the tablet). An optional "More playlists" tick box in Family Setup lets the Music button offer up to three named playlists
+- Runs on Android 9 and newer, so it gives old tablets a new job. It is tested and in daily use on an Android 9 tablet
 - Big, high-contrast buttons sized to the screen
 - Runs as the tablet's home screen, so it comes back on its own after a restart or power cut
 - Family Setup and Tablet Settings sit behind a 4-digit PIN
