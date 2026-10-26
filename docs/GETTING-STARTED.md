@@ -89,17 +89,32 @@ To open Family Setup, **press and hold the faint gear icon** in the top right co
 
 ![The Tablet Menu. Tablet Settings leaves the app for Android's normal home screen and settings (PIN needed, if one is set). Restart App is the first thing to try when something isn't working (no PIN needed). Family Setup sets up the music: Spotify, playlists, book, name and PIN (PIN needed, if one is set). Fix Spotify restarts Spotify when it is stuck: tap Force stop, then OK.](images/tablet-menu.png)
 
+Family Setup is one long page: scroll down through it. The numbers on the pictures below match these steps (5.1 is step 5, item 1). The name box and the PIN are at the top of the page, but leave them until the end.
+
+![Family Setup, Spotify part: the Client ID box (5.1), Get Login Link (5.2) and the box for pasting the Example Domain address, then Submit Code (5.4).](images/family-setup-2-spotify-login.png)
+
 1. **Spotify Playlist section.** Paste your Client ID from step 1 into **Spotify Client ID** and tap **Save Client ID**. It says *Client ID saved.*
 2. Tap **Get Login Link**. The tablet tries to open Spotify's login page.
    - If it doesn't open, long-press the blue link, tap **Copy**, and paste it into a browser on your phone or computer instead. Older tablets often need this.
 3. Log in with **this tablet's** Spotify account and tap **Agree**. You land on a plain page titled "Example Domain". That is expected.
-4. Copy the **whole web address** of that page, paste it into **Paste code or web address here**, and tap **Submit Code**. It should say it is connected.
-5. **Which Device Plays the Music?** Tap **Refresh Devices List** and choose this tablet. If it isn't listed, play a song in the Spotify app again, then refresh. Choosing the tablet here stops the music playing on someone's phone by mistake.
+4. Copy the **whole web address** of that page, paste it into **Paste code or web address here**, and tap **Submit Code**. It should say *Connected to Spotify.*
+
+![Family Setup, device and playlist part: Refresh Devices List, with this tablet chosen and ticked in green (5.5), then the playlist link and its short button name (5.6).](images/family-setup-3-device-playlist.png)
+
+5. **Which Device Plays the Music?** Tap **Refresh Devices List** and choose this tablet; it turns green with a tick. If it isn't listed, play a song in the Spotify app again, then refresh. Choosing the tablet here stops the music playing on someone's phone by mistake.
 6. **Playlist.** In the Spotify app, open the playlist, tap the three dots, then **Share**, **Copy link**. Paste it into **Playlist link** and give the button a short name, such as *Hymns* or *Dancing*.
    - For up to three playlists, tick **More playlists** and fill in the other two the same way. The Music button will then offer a choice.
+
+![Family Setup, audiobook part: the audiobook link and name (5.7), Save Playlists (5.8), and Clear Spotify details, which is only for wiping someone else's Spotify login and playlists.](images/family-setup-4-book-save.png)
+
 7. **Audiobook (optional).** Copy the book's link the same way, paste it into **Audiobook link** and give it a name. Leave it empty and the Book button doesn't appear.
-8. Tap **Save Playlists**.
-9. **Name.** Type the person's name and tap **Save Name**. The main screen then reads, for example, *Pat's Music*.
+8. Tap **Save Playlists**. It says how many items were saved, or explains what is wrong with a link.
+
+![Family Setup, top of the page: the person's name and Save Name (5.9), and Set PIN (6), which is done last of all.](images/family-setup-1-name-pin.png)
+
+9. **Name.** Scroll back to the top, type the person's name and tap **Save Name**. The main screen then reads, for example, *Pat's Music*.
+
+You can skip **Music Folder**: it is only for music files saved on the tablet instead of Spotify. Leave **Clear Spotify details** alone unless the tablet has someone else's Spotify login or playlists on it.
 
 ## 6. Test, then set the PIN last
 
