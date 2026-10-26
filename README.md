@@ -8,7 +8,7 @@ A simple, large-button Android music and audiobook player for older people and p
 
 Contact: dancing@7genanalytics.com
 
-> **Setting up a tablet?** Start with [docs/GETTING-STARTED.md](docs/GETTING-STARTED.md). It covers the simple setup (no computer needed) and how to create your own free Spotify developer app. For a fully locked-down tablet, follow [docs/TABLET-SETUP.md](docs/TABLET-SETUP.md) in order: the app must be made Device Owner *before* any Google account is added, or the tablet has to be wiped again.
+> **Setting up a tablet?** Start with [docs/GETTING-STARTED.md](docs/GETTING-STARTED.md). It covers the simple setup (no computer needed) and how to create your own free Spotify developer app. For a fully locked-down tablet (technical: needs a computer), follow [docs/TABLET-SETUP-TECHNICAL.md](docs/TABLET-SETUP-TECHNICAL.md) in order: the app must be made Device Owner *before* any Google account is added, or the tablet has to be wiped again.
 
 ## What it does
 
@@ -28,7 +28,7 @@ Contact: dancing@7genanalytics.com
 | `res/values/config_defaults.xml` | Pre-filled Family Setup values, **committed empty** |
 | `docs/GETTING-STARTED.md` | Start here: simple setup for families, Spotify developer app, what the messages mean |
 | `docs/CARERS-GUIDE.md` | Day-to-day guide for family, carers and staff: the buttons, the messages, what to try when something goes wrong. Made to print |
-| `docs/TABLET-SETUP.md` | Locked-down (kiosk) setup with Device Owner, for care homes |
+| `docs/TABLET-SETUP-TECHNICAL.md` | **Technical:** locked-down (kiosk) setup with Device Owner, for care homes. Needs a computer and command-line tools |
 | `docs/BUILD.md` | How the app is built and signed |
 
 ## Private configuration

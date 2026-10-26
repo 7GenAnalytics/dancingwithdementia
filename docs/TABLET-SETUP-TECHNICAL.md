@@ -1,3 +1,11 @@
+# ⚠️ TECHNICAL GUIDE
+
+## Not technical? Please use [GETTING-STARTED.md](GETTING-STARTED.md) instead.
+
+This guide needs a computer, command-line tools and a wiped tablet. Most families don't need it.
+
+---
+
 # Setting up a tablet: locked-down (kiosk) setup
 
 This is the **locked-down** setup, for care homes or anyone likely to wander out of the app. It needs a computer and wipes the tablet. For a simpler setup with no computer, see [GETTING-STARTED.md](GETTING-STARTED.md); that guide also explains how to create the Spotify developer app you need in step 9 below.

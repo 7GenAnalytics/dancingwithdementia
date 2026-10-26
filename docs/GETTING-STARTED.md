@@ -25,11 +25,11 @@ It is free, open source software (Apache 2.0 licence). It is not a medical produ
 | Who it suits | Someone at home, with family nearby | Care homes, or anyone likely to wander out of the app |
 | What you need | Just the tablet | A computer with `adb`, a USB cable, and a tablet you are happy to wipe |
 | What the person can do | The app fills the screen and is the tablet's home screen, but a swipe from the very edge can still show Android's bars | Nothing but the app. Bars, notifications and the lock screen are blocked |
-| Guide | Carry on below | [TABLET-SETUP.md](TABLET-SETUP.md) |
+| Guide | Carry on below | [TABLET-SETUP-TECHNICAL.md](TABLET-SETUP-TECHNICAL.md) |
 
 You can start simple and move to locked-down later, but that later move means wiping the tablet.
 
-> **Android 15 or newer?** Current builds can't be installed by tapping the file on these tablets; Android blocks it. Until the next build fixes this, use a computer: follow step 4 of [TABLET-SETUP.md](TABLET-SETUP.md) and add `--bypass-low-target-sdk-block` to the `adb install` command. To check the version: Settings, About tablet, Android version.
+> **Android 15 or newer?** Current builds can't be installed by tapping the file on these tablets; Android blocks it. Until the next build fixes this, use a computer: follow step 4 of [TABLET-SETUP-TECHNICAL.md](TABLET-SETUP-TECHNICAL.md) and add `--bypass-low-target-sdk-block` to the `adb install` command. To check the version: Settings, About tablet, Android version.
 
 ## 1. Create your own Spotify developer app (once)
 
@@ -81,7 +81,7 @@ A few Android settings make a big difference. Menu names vary between tablets; i
 - **Battery for Spotify and Music Player: Unrestricted** (Settings, Apps, the app, Battery). Otherwise Android may close Spotify and the buttons stop working.
 - **Date and time: automatic.** A wrong clock quietly breaks the Spotify login.
 
-The full checklist, with the reason for each setting, is in step 7 of [TABLET-SETUP.md](TABLET-SETUP.md#7-tablet-settings-checklist).
+The full checklist, with the reason for each setting, is in step 7 of [TABLET-SETUP-TECHNICAL.md](TABLET-SETUP-TECHNICAL.md#7-tablet-settings-checklist).
 
 ## 5. Family Setup: connect Spotify and add the music
 
