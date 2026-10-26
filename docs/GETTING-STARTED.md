@@ -102,7 +102,7 @@ Family Setup is one long page: scroll down through it. The numbers on the pictur
 ![Family Setup, device and playlist part: Refresh Devices List, with this tablet chosen and ticked in green (5.5), then the playlist link and its short button name (5.6).](images/family-setup-3-device-playlist.png)
 
 5. **Which Device Plays the Music?** Tap **Refresh Devices List** and choose this tablet; it turns green with a tick. If it isn't listed, play a song in the Spotify app again, then refresh. Choosing the tablet here stops the music playing on someone's phone by mistake.
-6. **Playlist.** In the Spotify app, open the playlist, tap the three dots, then **Share**, **Copy link**. Paste it into **Playlist link** and give the button a short name, such as *Hymns* or *Dancing*.
+6. **Playlist.** In the Spotify app, open the playlist, tap the three dots, then **Share**, **Copy link**. Paste it into **Playlist link** and give the button a short name, such as *Favourites* or *Dancing*.
    - For up to three playlists, tick **More playlists** and fill in the other two the same way. The Music button will then offer a choice.
 
 ![Family Setup, audiobook part: the audiobook link and name (5.7), Save Playlists (5.8), and Clear Spotify details, which is only for wiping someone else's Spotify login and playlists.](images/family-setup-4-book-save.png)

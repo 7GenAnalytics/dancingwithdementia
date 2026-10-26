@@ -839,7 +839,7 @@
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:hint="Button name, e.g. Hymns"
+                    android:hint="Button name, e.g. Favourites"
                     android:textColorHint="#666B75"
                     android:textColor="#F5F5F2"
                     android:textSize="15sp"

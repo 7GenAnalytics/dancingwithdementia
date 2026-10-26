@@ -161,7 +161,7 @@ About 15 minutes.
    - It should now say **Connected to Spotify.**
    - If the browser didn't open: long-press the blue link shown in Family Setup, copy it, and paste it into Chrome yourself.
 6. Under **Which Device Plays the Music?**, tap **Refresh Devices List** and choose **this tablet** (the device name you set, e.g. DwD-01). If it isn't listed, play a song in the Spotify app again, then refresh.
-7. **Playlist:** in the Spotify app, open the playlist, tap the three dots, **Share, Copy link**. Paste it into **Playlist link** and type a short button name (e.g. Hymns).
+7. **Playlist:** in the Spotify app, open the playlist, tap the three dots, **Share, Copy link**. Paste it into **Playlist link** and type a short button name (e.g. Favourites).
    - For more than one playlist, tick **More playlists** and fill in the second and third slots the same way.
 8. **Audiobook (optional):** copy the book's link the same way, paste it into **Audiobook link**, and give it a name. Leave both boxes empty if there's no book; the Book button then doesn't appear.
 9. Tap **Save Playlists**. It should say how many items were saved, or explain what's wrong with a link.
