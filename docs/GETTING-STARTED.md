@@ -4,6 +4,10 @@ This guide is for a family member, friend or volunteer setting up Dancing with D
 
 Dancing with Dementia turns an Android tablet into a very simple music and audiobook player: a few large buttons, nothing to get lost in, and no need for the person to find their way around Spotify or a phone. You set it up once with their music, and from then on it just plays.
 
+![The main screen: big Play, Now Playing and Stop buttons, smaller Quieter, Back, Next and Louder buttons, and Book and Music along the bottom. The faint setup cog is in the top right corner.](images/main-landscape.png)
+
+*The main screen, with the tablet on its side. The faint cog in the top right corner is how you reach the setup screens: press and hold it for about one and a half seconds. The person using the tablet doesn't need it. The tablet can also stand upright, and the buttons rearrange to fit ([see it upright](images/main-portrait.png)).*
+
 It is free, open source software (Apache 2.0 licence). It is not a medical product, and it collects no personal data: the only service it talks to is Spotify.
 
 ## What you need
@@ -83,6 +87,8 @@ The full checklist, with the reason for each setting, is in step 7 of [TABLET-SE
 
 To open Family Setup, **press and hold the faint gear icon** in the top right corner for about a second and a half. The Tablet Menu opens; tap **Family Setup**.
 
+![The Tablet Menu: Tablet Settings, Restart App, Family Setup, Fix Spotify and Close.](images/tablet-menu.png)
+
 1. **Spotify Playlist section.** Paste your Client ID from step 1 into **Spotify Client ID** and tap **Save Client ID**. It says *Client ID saved.*
 2. Tap **Get Login Link**. The tablet tries to open Spotify's login page.
    - If it doesn't open, long-press the blue link, tap **Copy**, and paste it into a browser on your phone or computer instead. Older tablets often need this.
@@ -91,6 +97,8 @@ To open Family Setup, **press and hold the faint gear icon** in the top right co
 5. **Which Device Plays the Music?** Tap **Refresh Devices List** and choose this tablet. If it isn't listed, play a song in the Spotify app again, then refresh. Choosing the tablet here stops the music playing on someone's phone by mistake.
 6. **Playlist.** In the Spotify app, open the playlist, tap the three dots, then **Share**, **Copy link**. Paste it into **Playlist link** and give the button a short name, such as *Hymns* or *Dancing*.
    - For up to three playlists, tick **More playlists** and fill in the other two the same way. The Music button will then offer a choice.
+
+     ![The choice screen shown when Music is tapped: three large buttons named Dancing, Hymns and Relaxing, and Back.](images/music-choice.png)
 7. **Audiobook (optional).** Copy the book's link the same way, paste it into **Audiobook link** and give it a name. Leave it empty and the Book button doesn't appear.
 8. Tap **Save Playlists**.
 9. **Name.** Type the person's name and tap **Save Name**. The main screen then reads, for example, *Pat's Music*.
@@ -105,6 +113,8 @@ The PIN is a gentle lock to stop accidental changes, not strong security: it is 
 That's it. The tablet is ready.
 
 ## Day to day
+
+![The main screen while music plays: the middle circle shows the song and the singer.](images/playing-landscape.png)
 
 - **Play** carries on from where the music stopped. **Stop** pauses it in place. In practice, most people only ever use these two.
 - **Restart App** in the Tablet Menu never needs the PIN. It is the guaranteed way back if anything looks wrong.

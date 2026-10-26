@@ -4,6 +4,8 @@ A simple app for those who struggle to access music or a book.
 
 A simple, large-button Android music and audiobook player for older people and people living with dementia. One screen, three big buttons (Play, Now Playing, Stop), with everything else tucked behind a PIN-protected Family Setup.
 
+![The Dancing with Dementia main screen](docs/images/main-landscape.png)
+
 Contact: dancing@7genanalytics.com
 
 > **Setting up a tablet?** Start with [docs/GETTING-STARTED.md](docs/GETTING-STARTED.md). It covers the simple setup (no computer needed) and how to create your own free Spotify developer app. For a fully locked-down tablet, follow [docs/TABLET-SETUP.md](docs/TABLET-SETUP.md) in order: the app must be made Device Owner *before* any Google account is added, or the tablet has to be wiped again.
