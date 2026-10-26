@@ -9,6 +9,7 @@ It is free, open source software (Apache 2.0 licence). It is not a medical produ
 ## What you need
 
 - **An Android tablet.** Android 9 or newer. This is a good use for an old tablet sitting in a drawer: the app is built to be light, and it is tested and running day to day on an Android 9 tablet (a Neocore N1+). A stand and a charger it can live on are a big help.
+- **A Wi-Fi connection** where the tablet will live, and the Wi-Fi name and password. Spotify streams the music over the internet, so without Wi-Fi the buttons can't play anything.
 - **A Spotify Premium account for this tablet.** Premium is needed for one app to control another's playback. Use one account per tablet: a Spotify account can only play on one device at a time.
 - **The person's music:** a Spotify playlist (up to three), and optionally one audiobook. If you need help choosing songs, [Playlist for Life](https://www.playlistforlife.org.uk/) has free guidance on building a personal playlist.
 - **A computer** for one step (creating your Spotify developer app, step 1). A phone works too, but a bigger screen is easier.
@@ -43,7 +44,7 @@ Spotify only lets an app control music if it has been registered. Each family re
 Things to know about Spotify's rules (as of 2026; Spotify does change them):
 
 - The account that created the developer app must keep its **Premium** subscription. If it lapses, the tablet stops being able to play until it is renewed.
-- Spotify asks for the tablet to be **logged in again about every six months**. The tablet will show *Spotify isn't connected yet.* when this happens. Repeat step 4 below; it takes two minutes.
+- Spotify asks for the tablet to be **logged in again about every six months**. The tablet will show *Spotify isn't connected yet.* when this happens. Repeat items 2 to 4 of step 5 below; it takes two minutes.
 
 ## 2. Install the app on the tablet
 
@@ -55,12 +56,22 @@ Things to know about Spotify's rules (as of 2026; Spotify does change them):
 6. Install **Spotify** from the Play Store and log in with this tablet's Premium account. Play any song for a few seconds, then stop it. This registers the tablet with Spotify.
 7. Press the tablet's **Home** button. When Android asks which app to use, choose **Music Player** and **Always**. *(The app is listed as "Music Player" on current builds; the next build renames it Dancing with Dementia.)*
 
-## 3. Make the tablet calmer
+## 3. Put the tablet in its place
+
+Where and how the tablet sits matters as much as the app. The aim is a tablet that is always on, always charged, always in the same spot, and can't be knocked over or carried off.
+
+- **Keep it plugged in.** Old tablets often have tired batteries that only last an hour or two. Leave the tablet connected to a wall socket through its USB charger, permanently. It then never runs flat, and the app restarts by itself after a power cut.
+- **Fix it to the wall or a stable surface.** Strong double-sided sticky Velcro pads on the back of the tablet work well: it stays put at a comfortable height, but you can lift it off for setup or updates. A tablet stand on a table is the alternative if you can't fix it to a wall.
+- **Choose the spot carefully.** Within easy reach of the chair or bed the person uses most, at seated eye level, away from direct sunlight (glare makes the screen hard to see), and where the charging cable can't be tripped over or pulled. Tuck or clip the cable along the wall.
+- **Check it within reach of the Wi-Fi.** Play some music there before you fix it in place. A weak signal makes the music stop and start.
+- **Battery safety.** A very old battery left on charge for a long time can occasionally swell. Every few weeks, look at the tablet: if the screen starts lifting or the back bulges, unplug it and stop using it. Use a decent charger, ideally the one that came with the tablet, and don't cover the tablet.
+
+## 4. Make the tablet calmer
 
 A few Android settings make a big difference. Menu names vary between tablets; if you can't find one, use the search bar at the top of Settings.
 
 - **Screen lock: None.** A PIN or swipe would stand between the person and their music.
-- **Screen timeout: the longest option.** A dark screen looks broken.
+- **Screen timeout: the longest option.** A dark screen looks broken. If the tablet lives on its charger, also switch on **Stay awake**, which keeps the screen on while charging. It is in Developer options, which is hidden until you go to Settings, About tablet and tap **Build number** seven times.
 - **Touch sounds, keyboard sounds and vibration: off.** Unexplained beeps can be distressing.
 - **Do Not Disturb: on.** Music still plays; pop-ups stay away.
 - **Battery for Spotify and Music Player: Unrestricted** (Settings, Apps, the app, Battery). Otherwise Android may close Spotify and the buttons stop working.
@@ -68,7 +79,7 @@ A few Android settings make a big difference. Menu names vary between tablets; i
 
 The full checklist, with the reason for each setting, is in step 7 of [TABLET-SETUP.md](TABLET-SETUP.md#7-tablet-settings-checklist).
 
-## 4. Family Setup: connect Spotify and add the music
+## 5. Family Setup: connect Spotify and add the music
 
 To open Family Setup, **press and hold the faint gear icon** in the top right corner for about a second and a half. The Tablet Menu opens; tap **Family Setup**.
 
@@ -84,7 +95,7 @@ To open Family Setup, **press and hold the faint gear icon** in the top right co
 8. Tap **Save Playlists**.
 9. **Name.** Type the person's name and tap **Save Name**. The main screen then reads, for example, *Pat's Music*.
 
-## 5. Test, then set the PIN last
+## 6. Test, then set the PIN last
 
 1. Close Family Setup and try every button: **Music** (and each choice, if there are several), **Book**, **Play**, **Stop**, **Back**, **Next**, **Louder**, **Quieter**.
 2. **Last of all**, open Family Setup again and tap **Set PIN**. Enter a 4-digit PIN twice. Without a PIN, anyone who finds the gear can change the setup. Write it down somewhere safe and share it only with people who need it.

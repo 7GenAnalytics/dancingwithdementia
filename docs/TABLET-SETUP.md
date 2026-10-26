@@ -130,7 +130,7 @@ Menu names vary between makes and Android versions. If a setting isn't where thi
 ### Before it leaves your desk
 - [ ] **Find My Device: on,** so a lost tablet can be located.
 - [ ] **USB debugging and Wireless debugging: off.** Turn back on only for maintenance. Some tablets switch Developer options off by themselves, so expect to re-enable it.
-- [ ] **Charger, cable and stand** go with the tablet.
+- [ ] **Charger, cable and stand** go with the tablet. Old tablets with tired batteries should stay plugged in permanently; see [GETTING-STARTED.md, step 3](GETTING-STARTED.md#3-put-the-tablet-in-its-place) for fixing the tablet in place and battery safety.
 
 ## 8. Open the app
 
