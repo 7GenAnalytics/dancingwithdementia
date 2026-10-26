@@ -6,7 +6,7 @@ A simple, large-button Android music and audiobook player for older people and p
 
 Contact: dancing@7genanalytics.com
 
-> **Setting up a tablet?** Start with [docs/TABLET-SETUP.md](docs/TABLET-SETUP.md) and follow it in order. The app must be made Device Owner *before* any Google account is added, or the tablet has to be wiped again.
+> **Setting up a tablet?** Start with [docs/GETTING-STARTED.md](docs/GETTING-STARTED.md). It covers the simple setup (no computer needed) and how to create your own free Spotify developer app. For a fully locked-down tablet, follow [docs/TABLET-SETUP.md](docs/TABLET-SETUP.md) in order: the app must be made Device Owner *before* any Google account is added, or the tablet has to be wiped again.
 
 ## What it does
 
@@ -23,7 +23,8 @@ Contact: dancing@7genanalytics.com
 | `src/` | Java source |
 | `res/` | Layouts, button styles, strings |
 | `res/values/config_defaults.xml` | Pre-filled Family Setup values, **committed empty** |
-| `docs/TABLET-SETUP.md` | Setting up a new tablet, including Device Owner |
+| `docs/GETTING-STARTED.md` | Start here: simple setup for families, Spotify developer app, what the messages mean |
+| `docs/TABLET-SETUP.md` | Locked-down (kiosk) setup with Device Owner, for care homes |
 | `docs/BUILD.md` | How the app is built and signed |
 
 ## Private configuration
