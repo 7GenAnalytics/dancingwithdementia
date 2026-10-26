@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pre-filled Family Setup values, applied once on first run.
+     Committed EMPTY on purpose. For a real deployment, copy this file to
+     local/res/values/config_defaults.xml (git-ignored), fill it in, and the
+     build overlays it on top of this one. Empty values are skipped. -->
+<resources>
+    <string name="default_spotify_client_id" translatable="false"></string>
+    <string name="default_playlist1_id" translatable="false"></string>
+    <string name="default_playlist1_name" translatable="false"></string>
+    <string name="default_playlist4_id" translatable="false"></string>
+    <string name="default_playlist4_name" translatable="false"></string>
+    <string name="default_playlist4_type" translatable="false">playlist</string>
+</resources>

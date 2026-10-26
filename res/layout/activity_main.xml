@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#14161A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp">
+
+        <!-- Now playing -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/nameHeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F5F5F2"
+                android:textSize="44sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Ready"
+                android:textColor="#F5F5F2"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/trackTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal"
+                android:textColor="#F5F5F2"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/trackCounterText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="#9AA0AB"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/emptyStateText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal"
+                android:textColor="#9AA0AB"
+                android:textSize="18sp"
+                android:text="No music has been set up yet.\nAsk a family member to add a Spotify playlist or a music folder." />
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/buttonsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/playButton"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_circle_green"
+                android:text="&#9654;\nPlay"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:enabled="false" />
+
+            <!-- 2026-08-21: was the Pause button - removed as functionally
+                 redundant with Stop, repurposed to show what's currently
+                 playing (track/chapter + artist/book name for Spotify, or
+                 the local track name) instead. Not a Button - purely a
+                 display, never tapped. -->
+            <TextView
+                android:id="@+id/nowPlayingText"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_circle_amber"
+                android:text="&#9834;"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:padding="18dp"
+                android:maxLines="4"
+                android:ellipsize="end" />
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/btn_circle_red"
+                android:text="&#9632;\nStop"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <!-- Secondary controls: smaller and less prominent than Play/Pause/Stop
+             on purpose, so they don't compete with the main transport buttons. -->
+        <LinearLayout
+            android:id="@+id/secondaryControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/volumeDownButton"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/btn_circle_secondary_bordered"
+                android:text="&#8722;\nQuieter"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/btn_circle_secondary_bordered"
+                android:text="&#9198;\nBack"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:enabled="false" />
+
+            <Button
+                android:id="@+id/skipButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/btn_circle_secondary_bordered"
+                android:text="&#9197;\nNext"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:enabled="false" />
+
+            <Button
+                android:id="@+id/volumeUpButton"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/btn_circle_secondary_bordered"
+                android:text="&#43;\nLouder"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- Build 42: the book and music buttons are now large rounded
+             rectangles side by side in their own row at the bottom of the
+             screen, instead of small circles tucked into the corners. They
+             sit inside this main column (not floating over it), so the big
+             Play/Now Playing/Stop buttons shrink to make room rather than
+             being overlapped. Height and text size are set in code by
+             sizeButtons(). If only one is set up, it fills the whole row. -->
+        <LinearLayout
+            android:id="@+id/contentButtonsRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bookButton"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_rect_book"
+                android:text="Book"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textAllCaps="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/spotifyToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn_rect_spotify"
+                android:text="&#9834;  Music"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textAllCaps="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/logoImage"
+        android:layout_width="340dp"
+        android:layout_height="100dp"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|left"
+        android:text="logo"
+        android:textColor="#B5793E"
+        android:textSize="56sp"
+        android:textStyle="bold|italic"
+        android:contentDescription="Logo placeholder" />
+
+    <ImageButton
+        android:id="@+id/setupTrigger"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="42dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_settings"
+        android:alpha="0.12"
+        android:contentDescription="Family setup"
+        android:scaleType="centerInside" />
+
+    <!-- Build 44: music choice screen, shown when Music is tapped with
+         "More playlists" ticked in Family Setup and two or more playlists
+         saved. One big named button per playlist, each plays on a single
+         tap and closes this screen. Tapping the dark background or Back
+         also closes it. Button heights and text sizes are set in code by
+         showMusicPicker() so three choices fit any screen. -->
+    <FrameLayout
+        android:id="@+id/musicPickerPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F20F1115"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingLeft="48dp"
+            android:paddingRight="48dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your music"
+                android:textColor="#F5F5F2"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/musicChoice1Button"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_rect_spotify"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:textAllCaps="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/musicChoice2Button"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_rect_spotify"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:textAllCaps="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/musicChoice3Button"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_rect_spotify"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:textAllCaps="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/musicPickerBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="#333844"
+                android:text="Back"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/pinPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter PIN"
+                android:textColor="#F5F5F2"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pinDotsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:minWidth="140dp"
+                android:gravity="center_horizontal"
+                android:textColor="#F5F5F2"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.4" />
+
+            <TextView
+                android:id="@+id/pinErrorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="#E27272"
+                android:textSize="15sp"
+                android:visibility="gone"
+                android:text="Wrong PIN - try again." />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:columnCount="3"
+                android:rowCount="4">
+
+                <Button android:id="@+id/pinKey1" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="1" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey2" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="2" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey3" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="3" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey4" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="4" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey5" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="5" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey6" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="6" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey7" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="7" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey8" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="8" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKey9" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="9" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKeyClear" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="Clr" android:textColor="#FFFFFF" android:textSize="15sp" />
+                <Button android:id="@+id/pinKey0" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="0" android:textColor="#FFFFFF" android:textSize="22sp" />
+                <Button android:id="@+id/pinKeyBack" android:layout_width="72dp" android:layout_height="72dp" android:layout_margin="4dp" android:background="@drawable/btn_circle_secondary" android:text="&#9003;" android:textColor="#FFFFFF" android:textSize="22sp" />
+
+            </GridLayout>
+
+            <Button
+                android:id="@+id/pinCancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:background="#20242C"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Family setup overlay panel -->
+    <FrameLayout
+        android:id="@+id/setupPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="32dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family Setup"
+                    android:textColor="#F5F5F2"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="16sp"
+                    android:text="Set up the music your family member will hear: link their Spotify playlist below, and/or choose a folder of music files on this tablet." />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="16sp"
+                    android:text="The person's name (shown on the main screen, e.g. “Pat Smith’s Music”):" />
+
+                <EditText
+                    android:id="@+id/personNameInput"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="e.g. Pat Smith"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="18sp"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/saveNameButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#333844"
+                    android:text="Save Name"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <!-- PIN lock section -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="28dp"
+                    android:background="#2A2F38" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Family/Staff PIN"
+                    android:textColor="#F5F5F2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pinExplainerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="15sp"
+                    android:text="No PIN is set yet - anyone who finds the gear icon can get in here. Set a 4-digit PIN so only family and staff who know it can reach Family Setup and Tablet Settings after the long-press." />
+
+                <Button
+                    android:id="@+id/setPinButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#1F7D38"
+                    android:text="Set PIN"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/removePinButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#333844"
+                    android:text="Remove PIN"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <!-- Local-folder section -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="28dp"
+                    android:background="#2A2F38" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Music Folder (optional)"
+                    android:textColor="#F5F5F2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="15sp"
+                    android:text="Only needed if you'd rather use music files saved on this tablet instead of (or as well as) Spotify - for example, a folder your Google Drive or Dropbox app keeps in sync. If you're only using Spotify, you can skip this." />
+
+                <Button
+                    android:id="@+id/chooseFolderButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#1F7D38"
+                    android:text="Choose Music Folder"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/folderStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#9AA0AB"
+                    android:textSize="14sp" />
+
+                <!-- Spotify section -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="28dp"
+                    android:background="#2A2F38" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Spotify Playlist"
+                    android:textColor="#F5F5F2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="15sp"
+                    android:text="Requires a one-time Spotify Developer app (see the setup guide) and a Premium account. Paste the Client ID below, then get a login link." />
+
+                <EditText
+                    android:id="@+id/spotifyClientIdInput"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Spotify Client ID"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/saveClientIdButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:background="#333844"
+                    android:text="Save Client ID"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/spotifyLoginButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#1DB954"
+                    android:text="Get Login Link"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#666B75"
+                    android:textSize="13sp"
+                    android:text="The tablet will try to open this itself. If that doesn't work: long-press the blue link below, tap Copy, then paste it into a browser on your phone or computer instead." />
+
+                <TextView
+                    android:id="@+id/spotifyLoginUrlText"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#5AB0E0"
+                    android:textSize="13sp"
+                    android:textIsSelectable="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="15sp"
+                    android:text="After logging in on your phone/computer, Spotify sends you to a page with a code in its web address. Copy that whole address (or just the code) and paste it here:" />
+
+                <EditText
+                    android:id="@+id/spotifyCodeInput"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Paste code or web address here"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="14sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/submitSpotifyCodeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:background="#1DB954"
+                    android:text="Submit Code"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/spotifyStatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#9AA0AB"
+                    android:textSize="14sp"
+                    android:text="Not connected to Spotify." />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#2A2F38" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Which Device Plays the Music?"
+                    android:textColor="#F5F5F2"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="14sp"
+                    android:text="Spotify can see several devices (phones, laptops, this tablet). Pick the tablet here so the playlist button always plays on it, not wherever else Spotify happens to be open. Open the Spotify app on the tablet first, then tap Refresh." />
+
+                <TextView
+                    android:id="@+id/spotifyCurrentDeviceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#9AA0AB"
+                    android:textSize="14sp"
+                    android:text="No device selected yet." />
+
+                <Button
+                    android:id="@+id/refreshSpotifyDevicesButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:background="#333844"
+                    android:text="Refresh Devices List"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/spotifyDeviceListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="15sp"
+                    android:text="Paste a playlist link from the Spotify app (Share &#8594; Copy Link) and give it a short name:" />
+
+                <EditText
+                    android:id="@+id/playlist1LinkInput"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Playlist link"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="15sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <EditText
+                    android:id="@+id/playlist1NameInput"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Button name, e.g. Hymns"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="15sp"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <!-- Build 44: optional extra playlists. Off by default, so the
+                     Music button plays the one playlist above straight away,
+                     exactly as before. Ticked, two more slots appear here and
+                     Music opens a screen of up to three big named choices. -->
+                <CheckBox
+                    android:id="@+id/multiPlaylistCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="8dp"
+                    android:text="More playlists (Music offers up to 3 choices)"
+                    android:textColor="#F5F5F2"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/extraPlaylistsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/playlist2LinkInput"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:hint="Second playlist link"
+                        android:textColorHint="#666B75"
+                        android:textColor="#F5F5F2"
+                        android:textSize="15sp"
+                        android:inputType="textUri"
+                        android:maxLines="1"
+                        android:gravity="center_horizontal" />
+
+                    <EditText
+                        android:id="@+id/playlist2NameInput"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:hint="Button name, e.g. Dancing"
+                        android:textColorHint="#666B75"
+                        android:textColor="#F5F5F2"
+                        android:textSize="15sp"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:gravity="center_horizontal" />
+
+                    <EditText
+                        android:id="@+id/playlist3LinkInput"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:hint="Third playlist link"
+                        android:textColorHint="#666B75"
+                        android:textColor="#F5F5F2"
+                        android:textSize="15sp"
+                        android:inputType="textUri"
+                        android:maxLines="1"
+                        android:gravity="center_horizontal" />
+
+                    <EditText
+                        android:id="@+id/playlist3NameInput"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:hint="Button name, e.g. Relaxing"
+                        android:textColorHint="#666B75"
+                        android:textColor="#F5F5F2"
+                        android:textSize="15sp"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#2A2F38" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Audiobook (optional)"
+                    android:textColor="#F5F5F2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="15sp"
+                    android:text="One Spotify audiobook, reached through its own book-shaped button instead of the playlist button above. Paste its link from the Spotify app (Share &#8594; Copy Link) and give it a name. A shortened spotify.link address works too - the app will follow it to find the real audiobook link." />
+
+                <EditText
+                    android:id="@+id/playlist4LinkInput"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:hint="Audiobook link (optional)"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="15sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <EditText
+                    android:id="@+id/playlist4NameInput"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Button name, e.g. Favourite Book"
+                    android:textColorHint="#666B75"
+                    android:textColor="#F5F5F2"
+                    android:textSize="15sp"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:gravity="center_horizontal" />
+
+                <Button
+                    android:id="@+id/savePlaylistsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#1F7D38"
+                    android:text="Save Playlists"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/playlistsStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="14sp" />
+
+                <!-- Build 44: wipes the Spotify login and every playlist/book
+                     slot, for a tablet set up with someone else's details or
+                     moving to a new resident. Needs two taps. Name and PIN
+                     are kept. See clearSpotifyDetails(). -->
+                <Button
+                    android:id="@+id/clearSpotifyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="28dp"
+                    android:paddingRight="28dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"
+                    android:background="#7A2E2E"
+                    android:text="Clear Spotify details"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textAllCaps="false" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="28dp"
+                    android:background="#2A2F38" />
+
+                <Button
+                    android:id="@+id/exitKioskButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#333844"
+                    android:text="Exit Kiosk Mode"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/kioskNoteText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="#9AA0AB"
+                    android:textSize="13sp"
+                    android:text="This tablet isn't provisioned as this app's device owner, so it doesn't lock itself down automatically. If you ever get stuck on the home screen, long-press the gear icon in the top right, then Restart App - that one never needs the Family PIN. Tablet Settings and Family Setup do need the PIN, if one is set."
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="28dp"
+                    android:background="#2A2F38" />
+
+                <Button
+                    android:id="@+id/closeSetupButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:background="#20242C"
+                    android:text="Close"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- Quick recovery menu -->
+    <FrameLayout
+        android:id="@+id/quickMenuPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- Round 40, 2026-08-24 - wrapped in a ScrollView. This panel used
+             to fit 3 buttons at a fixed wrap_content height with no way to
+             scroll; Round 37 added a 4th (Fix Spotify), and on a smaller or
+             lower-resolution screen (the older second test tablet) the
+             centered, non-scrolling content silently overflowed past the
+             bottom edge - Fix Spotify was genuinely built into the app and
+             installed correctly, just not reachable on that screen. Matches
+             setupPanel's own ScrollView above, which already solved this
+             same class of problem for Family Setup's much longer content. -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tablet Menu"
+                android:textColor="#F5F5F2"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal"
+                android:textColor="#9AA0AB"
+                android:textSize="14sp"
+                android:text="Restart App never needs the Family PIN. Tablet Settings and Family Setup do, if one is set." />
+
+            <Button
+                android:id="@+id/quickHomeScreenButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="#333844"
+                android:text="Tablet Settings"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/quickRestartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="#333844"
+                android:text="Restart App"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="#2A2F38" />
+
+            <Button
+                android:id="@+id/quickFamilySetupButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="#1F7D38"
+                android:text="Family Setup"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/quickFixSpotifyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:background="#8A4B1F"
+                android:text="Fix Spotify"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/quickCloseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:background="#20242C"
+                android:text="Close"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+</FrameLayout>

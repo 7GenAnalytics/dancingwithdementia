@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Same as btn_circle_secondary, but with a light stroke so the Quieter /
+     Skip / Louder row reads as a distinct, tappable group against the dark
+     background - easier for low-vision users to pick out at a glance. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#2A2F38" />
+            <stroke android:width="3dp" android:color="#AAB2C0" />
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape android:shape="oval">
+            <solid android:color="#20232A" />
+            <stroke android:width="3dp" android:color="#4A5160" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#4A5160"
+                android:endColor="#333844"
+                android:angle="270" />
+            <stroke android:width="3dp" android:color="#8A93A3" />
+        </shape>
+    </item>
+</selector>
