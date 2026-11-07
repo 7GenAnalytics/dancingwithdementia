@@ -61,6 +61,7 @@ Try these in order. Most problems are fixed by step 1 or 2.
 | *Starting Spotify… try the button again in a few seconds.* | Spotify wasn't running, so the app has woken it. Spotify's screen may flash up briefly. | Wait five seconds, then press Music or Book again. |
 | *Couldn't reach Spotify - check the tablet is online.* | No internet connection. | Check the Wi-Fi is working, then press Play again. |
 | *Couldn't find the tablet's Spotify device - pick it again in Family Setup.* | Spotify has forgotten which device should play. | Try Restart App. If it comes back, the family need to fix it in Family Setup. |
+| *Couldn't start Spotify (403)* | Spotify is refusing the app, usually because of a Spotify account setting. Music in the Spotify app itself may still work. | The family need to check the Spotify account. The steps are in the technical setup guide, under "If something goes wrong". |
 | *Spotify isn't connected yet.* | The Spotify login has run out. This happens about every six months. | The family need to log in again. It takes a couple of minutes. |
 | Stuck on Android's normal home screen | Something took the tablet out of the app. | Press the Home button. If Android asks which app, choose **Music Player** and **Always**. Or restart the tablet. |
 
