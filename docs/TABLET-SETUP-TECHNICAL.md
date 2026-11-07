@@ -189,6 +189,11 @@ The numbers on these pictures match step 5 of [GETTING-STARTED.md](GETTING-START
 9. Tap **Save Playlists**. It should say how many items were saved, or explain what's wrong with a link.
 
 ### If something goes wrong
+- **"Couldn't start Spotify (403)" while the Spotify app itself plays fine:** Spotify is refusing this app, not the tablet. Check in this order:
+  1. This tablet's Spotify account is on your developer app's **User Management** list, with the exact email it logs in with. This is the most common cause.
+  2. The account that **created the developer app has active Premium** (spotify.com/account). If it lapses, every tablet using that Client ID gets 403, even when the tablet's own account is Premium.
+  3. This tablet's own account shows **Premium** in the Spotify app (Settings, Account). On a Family plan, check it is still a member after any lapse in payment.
+  4. Then Family Setup, log in again (step 5) and pick the device again (step 6).
 - **Login says the user isn't registered / "Something went wrong":** this tablet's Spotify account isn't on your developer app's **User Management** list, or the Client ID belongs to someone else's developer app. Check both in the Spotify developer dashboard.
 - **Buttons do nothing:** the wrong device is selected (step 6), or the Spotify app has been closed. Tablet Menu, **Restart App** usually sorts it.
 - **Music plays on another device:** that account is signed in somewhere else too. Each tablet needs its own account.
@@ -208,5 +213,6 @@ The numbers on these pictures match step 5 of [GETTING-STARTED.md](GETTING-START
 - **Getting to Android's own settings:** Tablet Menu, **Tablet Settings** (needs the PIN). This unlocks the kiosk and opens the tablet's normal home screen. To lock it again afterwards, use **Restart App** in the Tablet Menu, or restart the tablet.
 - **Updates:** a new build signed with the same release key installs over the top (`adb install -r`, or from the releases page). Device Owner and Family Setup are kept.
 - **Fix Spotify on a locked-down tablet:** if Android's Spotify page doesn't open while the kiosk is locked, go in through **Tablet Settings** instead: Apps, Spotify, **Force stop**, then **Restart App** to lock the tablet again.
+- **Moving from Build 41 or 42:** these used an older app ID, so Build 43 or later installs as a separate app, not an update. Do Family Setup again in the new app, check it plays, then uninstall the old one so only one app claims the Home button.
 - **Undoing Device Owner:** the only way is a factory reset. That is deliberate. It stops anyone switching the kiosk off by accident.
 - **What the on-screen messages mean:** see the table in [CARERS-GUIDE.md](CARERS-GUIDE.md#what-the-words-at-the-top-mean).
